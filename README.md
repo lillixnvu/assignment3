@@ -5,8 +5,10 @@ Welcome to my Bash scripting project! This guide will walk you on how to generat
 ---
 ## Prerequisites
 To get started, pleas ensure you meet the following requirements:
-- **Operating System**: Arch Linux with Bash.
-- **Permissions**: Root access to execute the scripts.
+- **Operating System**: Arch Linux with Bash installed.
+- **Permissions**: Root access to run the necessary scripts.
+- **Working Directory**: All commands in this guide are executed from the user's home.
+- **Installed Packages**: Ensure `nginx` and `ufw` are installed.
 ---
 ## Setting up the System User and Directory Structure
 1. Run the following command to create a system user with a home directory in `/var/lib/webgen` with a non-login shell:
@@ -114,3 +116,39 @@ sudo systemctl reload nginx
 > > Using a separate server block keeps configurations organized and easy to manage. IT reduces errors, simplifies troubleshooting, and makes backups and scaling easier compared to editing the main `nginx.conf` file.
 
 ---
+## Setting up `ufw`
+1.  Enable and start the `ufw.service`:
+```bash
+sudo systemctl enable --now ufw.service
+```
+
+2. Allow SSH connection and limit the rate to our firewall:
+```bash
+sudo ufw allow ssh
+sudo ufw limit ssh
+```
+
+3. Allow http connections:
+```bash
+sudo ufw allow http
+```
+
+4. Once set-up, run the following:
+```bash
+sudo ufw enable
+```
+
+5. Check the status to confirm that everything is working:
+```bash
+sudo ufw status verbose
+```
+
+**Output**:
+
+
+---
+## Check if Web Server is Running
+To check if your web server is running, please go to any web browser and enter in `http://please-input-your-ip-address`
+
+**Successful output**:
+

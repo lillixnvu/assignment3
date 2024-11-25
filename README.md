@@ -144,6 +144,7 @@ sudo ufw status verbose
 ```
 
 **Output**:
+
 ![UFW set-up](images/ufw.png)
 
 ---

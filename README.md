@@ -144,11 +144,11 @@ sudo ufw status verbose
 ```
 
 **Output**:
-
+![UFW set-up](images\ufw.png)
 
 ---
 ## Check if Web Server is Running
 To check if your web server is running, please go to any web browser and enter in `http://please-input-your-ip-address`
 
 **Successful output**:
-
+![successful web server output](images\webserver.png)
